@@ -2,6 +2,15 @@ import java.util.*;
 
 //Collection
 public class Matrix {
+
+    private int rows;
+    private int columns;
+
+    Matrix(int rows, int columns) {
+        this.rows = rows;
+        this.columns = columns;
+    }
+
     // Initialisation of variable
 
 
@@ -23,7 +32,7 @@ public class Matrix {
      * Colums an d rows is 10x10
      * @return
      */
-    public int[][] fill_matrix(int columns, int rows){
+    public int[][] fill_matrix(){
         int[][] matrix_1 = new int[rows][columns];
         for (int i = 0; i < matrix_1.length; i++) {
             for (int j = 0; j < matrix_1[i].length ; j++) {
@@ -41,9 +50,21 @@ public class Matrix {
 
 
 
+    /**
+     * @param matrix Matrix which we want to show
+     */
+    public void showMatrix(int [][] matrix) {
+        for (int [] row : matrix) {
+            for (int elem : row)
+                System.out.printf("%3d ", elem);
+            System.out.println();
+        }
+    }
+
     public static void main(String[] args) {
 
 
+        //showMatrix(multAxB(matrix.fill_matrix(5,5),matrix.fill_matrix(5,5)));
     // заносим значения
 
         long start = System.currentTimeMillis();		            // до
